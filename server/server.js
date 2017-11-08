@@ -38,7 +38,7 @@ server.get('/',function(req,res){
         conversions,
         locale
     }));
-	
+
     res.render('app/index',{app:generated,defaults:JSON.stringify({items,conversions})});
 })
 .get("/rates",function(req,res){
@@ -54,5 +54,5 @@ server.get('/',function(req,res){
   res.json(locale);
 });
 
-let instance = server.listen(80,()=>{console.info("Express listening on port 80.");});
+let instance = server.listen(8080,()=>{console.info("Express listening on port 8080.");});
 module.exports = instance;
