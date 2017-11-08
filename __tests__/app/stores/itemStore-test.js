@@ -1,12 +1,11 @@
 describe("the item store", function(){
   it("should make a request to the restHelper", function(){
-    const itemStore = require.requireActual('../../../app/stores/ItemStore.js');
 
     const restHelper = require('../../../app/helpers/restHelper.js');
+    let spy = jest.spyOn(restHelper, 'get');
 
-    const spy = jest.spyOn(restHelper, 'get');
+    const itemStore = require.requireActual('../../../app/stores/ItemStore.js');
 
-    expect(spy).toHaveBeenCalled();
-    // expect(spy).toBeCalledWith('items');
+    expect(spy).toBeCalledWith('items');
   })
 })
